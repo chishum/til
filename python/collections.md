@@ -28,7 +28,7 @@
   host, port = address
   first_name, last_name, phone = person
 
-   for name, shares, price in portfolio:
+  for name, shares, price in portfolio:
     total += shares * price
 
 ```
