@@ -10,3 +10,6 @@
 
 - python
   - 책정리
+
+- editor
+  - atom
