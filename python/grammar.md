@@ -22,10 +22,10 @@
   while True:
     print(random.choice(words))
     raw_input()
-  ```
+```
   
-  ## 한 줄 표현 
-  ```
-   mdb = set(line.strip() for line in open('Million Dollat Baby.txt'))
-   list([cast for cast in all if cast.startwith('Morgan')])
-   ```
+## 한 줄 표현 
+```
+ mdb = set(line.strip() for line in open('Million Dollat Baby.txt'))
+ list([cast for cast in all if cast.startwith('Morgan')])
+```
