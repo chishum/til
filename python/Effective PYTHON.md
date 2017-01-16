@@ -17,5 +17,5 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 ```
 
 #### 2. PEP8스타일 가이드를 따르자.
-파이썬 개선 제안서(Python Enhancement Proposal) #8
+파이썬 개선 제안서(Python Enhancement Proposal) 8번째이다.
 PEP8은 파이썬 코드를 어떻게 구성할지 알려주는 스타일 가이드이다.
