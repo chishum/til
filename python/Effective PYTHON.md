@@ -48,3 +48,22 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 + 모듈을 임포트할 때는 항상 모듈의 절대 이름을 사용하면 현재 모듈의 경로를 기준으로 상대 경로로 된 이름을 사용하지 않는다. 예를 들어 bar 패키지의 foo 모듈을 임포트하려면 그냥 import foo가 아닌 from bar import foo라고 해야 한다.
 + 상대적인 임포트를 해야 한다면 명시적인 구문을 써서 from . import foo라고 한다.
 + 임포트는 '표준 라이브러리 모듈, 서드파티 모듈, 자신이 만든 모듈'섹션 순으로 구분해야 한다. 각각의 하위 섹션에서는 알파벳 순서로 임포트한다.
+
+### 7. map과 filter 대신 리스트 컴프리헨션을 사용하자.
+```python
+a = [1,2,3,4,5,6,7,8,9,10]
+squares = [x**2 for x in a]
+print(squares)
+
+map_squares = map(lambda x: x**2, a) // map
+
+// filter
+even_quqres = [x**2 for x in a if x % 2 == 0]
+map_even_squares = map(lambda x: x**2, filter(lambda x: x % 2 == 0, a)) // map
+assert even_squares == map_even_squares
+
+chile_ranks = {'ghost': 1, 'habanero': 2, 'cayenne': 3}
+rank_dict = {rank: name for name, rank in chile_ranks.items()}
+chile_len_set = {len(name) for name in rank_dict.values()}
+
+```
