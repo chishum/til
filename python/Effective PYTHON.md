@@ -67,3 +67,25 @@ rank_dict = {rank: name for name, rank in chile_ranks.items()}
 chile_len_set = {len(name) for name in rank_dict.values()}
 
 ```
+
+### 9.컴프리헨션이 클 때는 제너레이터 표현식을 고려하자.
++ 리스트 컴프리헨션은 큰 입력을 처리할 때 너무 많은 메모리를 소모해서 문제를 일으킬 수 있다.
++ 제너레이터 표현식은 이터레이터로 한 번에 한 출력만 만드므로 메모리 문제를 피할 수 있다.
++ 한 제너레이터 표현식에사 나온 이터레이터를 또 다른 제너레이터 표현식의 for서브표현식으로 넘기는 방식으로 제너레이터 표현식을 조합할 수 있다.
++ 제너레이터 표현식은 서로 연결되어 있을 때 매우 빠르게 실행된다.
+```python
+value = [int(x) for x in open('temp.txt')]
+print(value)
+it = (int(x) for x in open('temp.txt'))
+print(it)
+print(next(it))
+print(next(it))
+print(next(it))
+print(next(it))
+
+roots = ((x, x** 0.5) for x in it) // 위에서 4번 진행했으므로 그 이후부터 진행된다.
+print(next(roots))
+print(next(roots))
+print(next(roots))
+
+```
