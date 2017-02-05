@@ -89,3 +89,50 @@ print(next(roots))
 print(next(roots))
 
 ```
+
+### 10. range보다는 enumerate를 사용하자.
+```python
+flavor_list = ['vanilla','chocolate','pecan','strawberry']
+for flavor in flavor_list:
+  print('%s is delicious' % flavor)
+
+for i in range(len(flavor_list)):
+  flavor = flavor_list[i]
+  print('%d: %s' % (i + 1, flavor))
+
+for i, flavor in enumerate(flavor_list):
+  print('%d: %s' % (i+1, flavor))
+
+for i, flavor in enumerate(flavor_list, 1):
+  print('%d: %s' % (i, flavor))
+```
+
+### 11. 이터레이터를 병렬로 처리하려면 zip을 사용하자.
+```python
+names = ['Cecilia','Lise','Marie']
+letters = [len(n) for n in names]
+
+longest_name = None
+max_letters = 0
+for i in range(len(names)):
+  count = letters[i]
+  if count > max_letters:
+    longest_name = names[i]
+    max_letters = count
+print(longest_name)
+// Cecilia
+
+for i, name in enumerate(names):
+  count = letters[i]
+  if count > max_letters:
+    longest_name = name
+    max_letters = count
+
+for name, count in zip(names, letters):
+  if count > max_letters:
+    longest_name = name
+    max_letters = count
+
+```
++ python2에서는 izip을 사용해야 한다.
++ zip은 서로 length가 같을 때 사용해야 한다.
